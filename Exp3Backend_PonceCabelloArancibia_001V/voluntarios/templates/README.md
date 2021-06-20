@@ -1,2 +1,0 @@
-# Experiencia2_ArancibiaCabelloPonce_001V
-Repositorio Experiencia 2. Desarrollo proyecto semestral

@@ -1,0 +1,230 @@
+{% extends 'voluntarios/base.html' %}
+
+{% block contenido %}
+
+    <style>
+        .error-control {
+        border: 1px solid red;
+    }
+
+    label.error {
+        color: red;
+        width: 300px;
+        font-size: 0.8em;
+        margin-top: -5px;
+        margin-bottom: 10px;
+    }
+    </style>
+    
+    
+    <script>
+    function CambiarModo(a)
+    {
+      var cuerpoweb = document.body;
+      cuerpoweb.classList.toggle("oscuro");
+    
+    }
+
+
+      $(function() 
+      {
+
+        $("#registro").validate({
+          rules: {
+                    nombre: {
+                        required: true,
+                    },
+                    fechanac: {
+                      required: true,
+                    },
+                    region: {
+                      required: true,
+                    },
+                    comuna: {
+                      required: true,
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    confirmaemail:{
+                      required: true,
+                      equalTo: "#email",
+                    },
+                    password: {
+                      required: true,
+                      password: true,
+                    },
+                    
+                    confirmapassword: {
+                        required: true,
+                        equalTo: "#password"
+                    },   
+                    fono: "required",
+
+                }, //rules
+          
+            messages: {
+                nombre: {
+                  required: 'Ingresa tu nombre y apellidos'
+                },
+                email: {
+                    required: 'Ingresa tu correo electrónico',
+                    email: 'Formato de correo no válido'
+                },
+                confirmaemail: {
+                  required: 'Reingresa tu correo electrónico',
+                  email: 'Formato de correo no válido',
+                  equalTo:'Los correos no coinciden'
+                },
+                password: {
+                    required: 'Ingresa una contraseña',
+                    minlength: 'Caracteres insuficientes'
+                },
+                fono:{
+                    required: 'Ingrese un número de celular',
+                    minlength: 'Cantidad de digitos insuficiente'
+                },
+                fechanac:{
+                    required: 'Seleccione una fecha válida',
+                    min: 'Fecha no corresponde'
+                },
+                confirmapassword: {
+                    required: 'Reingresa la contraseña',
+                    equalTo: 'Las contraseñas ingresadas no coinciden',
+                    minlength: 'Caracteres insuficientes'
+                },
+                region: {
+                  required: 'Ingresa el nombre de tu región'
+                },
+                comuna: {
+                  required: 'Ingresa el nombre de tu comuna'
+                }  
+                
+            }//messages
+          }); //$('#mi-formulario').validate
+      }); //function
+    </script>
+      
+      <section>
+        <div class="container" id="formregistro">
+          <div class="title">Ingresa tus datos</div>
+          <div class="col" id="formularioregistro">
+                  <form id="registro" action="#" method="POST">
+                    <div class="datos-usuario">
+                      <div class="input-box">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required><br>
+                      </div>
+                      <div class="input-box">
+                        <label for="fechanac">Fecha de nacimiento</label>
+                        <input type="date" id="fechanac" name="fechanac" required><br>
+                      </div>
+                      <div class="input-box">
+                        <label for="region">Región</label>
+                        <input type="text" id="region" name="region" required><br>
+                      </div>
+                      <div class="input-box">
+                        <label for="comuna">Comuna</label>
+                        <input type="text" id="comuna" name="comuna" required><br>
+                      </div>
+                      <div class="input-box">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="correo@dominio.cl"><br>
+                      </div>
+                      <div class="input-box">
+                        <label for="confirmaemail">Confirme su correo electrónico</label>
+                        <input type="email"  name="confirmaemail" required placeholder="correo@dominio.cl"><br>
+                      </div>
+                      <div class="input-box">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" class="required" placeholder="******"><br>
+                      </div>
+                      <div class="input-box">
+                        <label for="confirmapassword">Confirme su contraseña</label>
+                        <input type="password" id="confirmapassword" name="confirmapassword" class="required" placeholder="******"><br>
+                      </div>
+                      <div class="input-box">
+                        <label for="fono">Número de teléfono</label>
+                        <input type="tel" id="fono" name="fono" required placeholder="+569XXXXXXXX" maxlength="12"><br>
+                      </div>
+                      <div>
+                       <button type="button" class="btn btn-dark" onclick="CambiarModo(this)"> Modo Oscuro</button>
+                      </div>
+                      <div class="input-box">
+                        <label for="opcion">¿Deseas ser voluntario o necesitas ayuda?</label><br>               
+                        <select id="opcion" name="opcion">
+                            <option value="voluntario">Quiero ser voluntario</option>
+                            <option value="ayuda">Necesito ayuda</option>                    
+                        </select>
+                      </div>
+                      <div class="button">
+                        <input type="submit" value="Registrarse"><br><br>
+                      </div>
+                    </div>
+                  </form>      
+          </div>             
+        </div>
+      </section>
+
+      {% load static %}
+
+      <div class="container2 mx-5" >
+        <h2 class="text-center" style="color: #33bbff">Galería</h2>
+        <hr>
+      </div>
+  
+      
+      <div class="row mx-5 p-5" id="galeria" >
+        <div class="container col-lg-4">
+          <img src="{% static 'voluntarios/img/1.jpg' %}" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Puedes ser voluntario para grupos de ayuda, acompañar a personas que se sientan solas</div>
+          </div>
+        </div>
+  
+        <div class="container col-lg-4">
+          <img src="{% static 'voluntarios/img/2.jpg' %}" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Puedes llevarle las compras a ese vecino que no puede salir por miedo a contagiarse</div>
+          </div>
+        </div>
+  
+        <div class="container col-lg-4">
+          <img src="{% static 'voluntarios/img/3.jpg' %}" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">El trabajo en comunidad es esencial para sobrevivir</div>
+          </div>
+        </div>
+  
+        <div class="container col-lg-4">
+          <img src="{% static 'voluntarios/img/4.jpg' %}" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Existen personas que necesitan ayuda con la limpieza de su hogar, por alguna discapacidad o falta de tiempo. Tú podrías ayudarlos</div>
+          </div>
+        </div>
+  
+        <div class="container col-lg-4">
+          <img src="{% static 'voluntarios/img/5.jpg' %}" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Si tienes conocimientos que entregar, este será tu lugar favorito</div>
+          </div>
+        </div>
+  
+        <div class="container col-lg-4">
+          <img src="{% static 'voluntarios/img/6.jpg' %}" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Si todos nos ayudamos, llegaremos lejos</div>
+          </div>
+        </div>  
+      </div>
+      
+      
+      <script type="text/javascript"> 
+        function cambiarModo() { 
+          var cuerpoweb = document.body; 
+          cuerpoweb.classList.toggle("oscuro"); 
+        } 
+      </script>      
+
+{% endblock %}
