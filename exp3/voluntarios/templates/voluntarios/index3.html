@@ -31,6 +31,8 @@
 
         $("#registro").validate({
           rules: {
+                    rut: {required: true,
+                    },
                     nombre: {
                         required: true,
                     },
@@ -65,6 +67,10 @@
                 }, //rules
           
             messages: {
+
+                rut: {
+                  required: 'Ingrese su rut con guión y sin puntos'
+                },
                 nombre: {
                   required: 'Ingresa tu nombre y apellidos'
                 },
@@ -112,6 +118,10 @@
           <div class="col" id="formularioregistro">
                   <form id="registro" action="#" method="POST">
                     <div class="datos-usuario">
+                      <div class="input-box">
+                        <label for="rut">Rut</label>
+                        <input type="text" id="rut" name="rut" required placeholder="Ingrese su rut con guión y sin puntos" maxlength="10"><br>
+                      </div>
                       <div class="input-box">
                         <label for="nombre">Nombre completo</label>
                         <input type="text" id="nombre" name="nombre" required><br>
