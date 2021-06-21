@@ -31,7 +31,8 @@
 
         $("#registro").validate({
           rules: {
-                    rut: {required: true,
+                    rut:    {
+                        required: true,
                     },
                     nombre: {
                         required: true,
@@ -67,8 +68,7 @@
                 }, //rules
           
             messages: {
-
-                rut: {
+                rut:    {
                   required: 'Ingrese su rut con guión y sin puntos'
                 },
                 nombre: {
@@ -119,12 +119,12 @@
                   <form id="registro" action="#" method="POST">
                     <div class="datos-usuario">
                       <div class="input-box">
-                        <label for="rut">Rut</label>
-                        <input type="text" id="rut" name="rut" required placeholder="Ingrese su rut con guión y sin puntos" maxlength="10"><br>
-                      </div>
-                      <div class="input-box">
                         <label for="nombre">Nombre completo</label>
                         <input type="text" id="nombre" name="nombre" required><br>
+                      </div>
+                      <div class="input-box">
+                        <label for="rut">Rut</label>
+                        <input type="text" id="rut" name="rut" required placeholder="Ingrese su rut con guión y sin puntos" maxlength="10"><br>
                       </div>
                       <div class="input-box">
                         <label for="fechanac">Fecha de nacimiento</label>
@@ -173,6 +173,36 @@
                       </div>
                     </div>
                   </form>      
+          </div>
+          <div class="row">
+            <h1>Mostrando datos usuario</h1>
+          </div>
+          <div class="row">
+            <table border="1">
+              <tr>
+                <td>Rut</td>
+                <td>Nombre</td>
+                <td>Fecha nacimiento</td>
+                <td>Región</td>
+                <td>Comuna</td>
+                <td>Correo electrónico</td>
+                <td>Número de teléfono</td>
+              </tr>
+              {% for us in datos %}
+    
+              <tr>
+                  <td>{{us.rutUsuario}}</td>
+                  <td>{{us.nombreUsuario}}</td>
+                  <td>{{us.fechaNac}}</td>
+                  <td>{{us.region}}</td>
+                  <td>{{us.comuna}}</td>
+                  <td>{{us.email}}</td>
+                  <td>{{us.fono}}</td>
+              </tr>                
+    
+              {%endfor%}    
+    
+            </table>
           </div>             
         </div>
       </section>
