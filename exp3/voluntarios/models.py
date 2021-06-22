@@ -13,17 +13,7 @@ class Usuario(models.Model):
     password = models.CharField(max_length=12, verbose_name='Password')
     password2 = models.CharField(max_length=12, verbose_name='Reingrese su Password')
     fono = models.CharField(max_length=12, verbose_name='Número de teléfono')
-    VOLUNTARIO = 'VO'
-    AYUDA = 'AY'
-    voluntario_o_solicita_choices = [
-        (VOLUNTARIO, 'Quiero ser voluntario'),
-        (AYUDA, 'Necesito ayuda')
-    ]
-    voluntario_o_solicita = models.CharField(
-        max_length=2,
-        choices= voluntario_o_solicita_choices,
-        default=VOLUNTARIO,
-    )
+   
 
     def __str__(self):
         return self.rutUsuario
