@@ -31,3 +31,23 @@ def crearusuario(request):
 def Ver(request):
     usuarios = Usuario.objects.all()
     return render(request, 'voluntarios/ver.html', context={'usuarios': usuarios})
+
+
+def form_del_usuario(request,id):
+    usuario = Usuario.objects.get(rutUsuario=id)
+    usuario.delete()
+    return redirect('ver')
+
+def form_mod_usuario(request,id):
+    usuario = Usuario.objects.get(rutUsuario=id)
+
+    datos={
+        'form': UsuarioForm(instance=usuario)
+    
+    }
+    if request.method == 'POST':
+        formulario = UsuarioForm(data=request.POST, instance = usuario)
+        if formulario.is_valid:
+            formulario.save()
+            return redirect('ver')
+    return render(request, 'voluntarios/form_mod_usuario.html', datos)

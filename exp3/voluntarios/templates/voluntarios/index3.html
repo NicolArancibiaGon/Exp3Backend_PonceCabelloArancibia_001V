@@ -5,124 +5,53 @@
 {% load static %}
 
 
+<div class="container2 mx-5">
+  <h2 class="text-center" style="color: #33bbff">Galería</h2>
+  <hr>
+</div>
 
-    <style>
-        .error-control {
-        border: 1px solid red;
-    }
+<div class="row mx-5 p-5" id="galeria">
+  <div class="container col-lg-4">
+    <img src="{% static 'voluntarios/img/1.jpg' %}" alt="Avatar" class="image">
+    <div class="overlay">
+      <div class="text">Puedes ser voluntario para grupos de ayuda, acompañar a personas que se sientan solas</div>
+    </div>
+  </div>
 
-    label.error {
-        color: red;
-        width: 300px;
-        font-size: 0.8em;
-        margin-top: -5px;
-        margin-bottom: 10px;
-    }
-    </style>
-    
-    
-    <script>
-    function CambiarModo(a)
-    {
-      var cuerpoweb = document.body;
-      cuerpoweb.classList.toggle("oscuro");
-    
-    }
-    </script>
-      
-      <section>
-        
-          <div class="row">
-            <h1>Mostrando datos usuario</h1>
-          </div>
-          <div class="row">
-            <table border="1">
-              <tr>
-                <td>Rut</td>
-                <td>Nombre</td>
-                <td>Fecha nacimiento</td>
-                <td>Región</td>
-                <td>Comuna</td>
-                <td>Correo electrónico</td>
-                <td>Número de teléfono</td>
-              </tr>
-              {% for us in datos %}
-    
-              <tr>
-                  <td>{{us.rutUsuario}}</td>
-                  <td>{{us.nombreUsuario}}</td>
-                  <td>{{us.fechaNac}}</td>
-                  <td>{{us.region}}</td>
-                  <td>{{us.comuna}}</td>
-                  <td>{{us.email}}</td>
-                  <td>{{us.fono}}</td>
-              </tr>                
-    
-              {%endfor%}    
-    
-            </table>
-          </div>             
-        </div>
-      </section>
+  <div class="container col-lg-4">
+    <img src="{% static 'voluntarios/img/2.jpg' %}" alt="Avatar" class="image">
+    <div class="overlay">
+      <div class="text">Puedes llevarle las compras a ese vecino que no puede salir por miedo a contagiarse</div>
+    </div>
+  </div>
 
-      {% load static %}
+  <div class="container col-lg-4">
+    <img src="{% static 'voluntarios/img/3.jpg' %}" alt="Avatar" class="image">
+    <div class="overlay">
+      <div class="text">El trabajo en comunidad es esencial para sobrevivir</div>
+    </div>
+  </div>
 
-      <div class="container2 mx-5" >
-        <h2 class="text-center" style="color: #33bbff">Galería</h2>
-        <hr>
-      </div>
-  
-      
-      <div class="row mx-5 p-5" id="galeria" >
-        <div class="container col-lg-4">
-          <img src="{% static 'voluntarios/img/1.jpg' %}" alt="Avatar" class="image">
-          <div class="overlay">
-            <div class="text">Puedes ser voluntario para grupos de ayuda, acompañar a personas que se sientan solas</div>
-          </div>
-        </div>
-  
-        <div class="container col-lg-4">
-          <img src="{% static 'voluntarios/img/2.jpg' %}" alt="Avatar" class="image">
-          <div class="overlay">
-            <div class="text">Puedes llevarle las compras a ese vecino que no puede salir por miedo a contagiarse</div>
-          </div>
-        </div>
-  
-        <div class="container col-lg-4">
-          <img src="{% static 'voluntarios/img/3.jpg' %}" alt="Avatar" class="image">
-          <div class="overlay">
-            <div class="text">El trabajo en comunidad es esencial para sobrevivir</div>
-          </div>
-        </div>
-  
-        <div class="container col-lg-4">
-          <img src="{% static 'voluntarios/img/4.jpg' %}" alt="Avatar" class="image">
-          <div class="overlay">
-            <div class="text">Existen personas que necesitan ayuda con la limpieza de su hogar, por alguna discapacidad o falta de tiempo. Tú podrías ayudarlos</div>
-          </div>
-        </div>
-  
-        <div class="container col-lg-4">
-          <img src="{% static 'voluntarios/img/5.jpg' %}" alt="Avatar" class="image">
-          <div class="overlay">
-            <div class="text">Si tienes conocimientos que entregar, este será tu lugar favorito</div>
-          </div>
-        </div>
-  
-        <div class="container col-lg-4">
-          <img src="{% static 'voluntarios/img/6.jpg' %}" alt="Avatar" class="image">
-          <div class="overlay">
-            <div class="text">Si todos nos ayudamos, llegaremos lejos</div>
-          </div>
-        </div>  
-      </div>
-      
-      
-      <script type="text/javascript"> 
-        function cambiarModo() { 
-          var cuerpoweb = document.body; 
-          cuerpoweb.classList.toggle("oscuro"); 
-        } 
-      </script>      
+  <div class="container col-lg-4">
+    <img src="{% static 'voluntarios/img/4.jpg' %}" alt="Avatar" class="image">
+    <div class="overlay">
+      <div class="text">Existen personas que necesitan ayuda con la limpieza de su hogar, por alguna discapacidad o
+        falta de tiempo. Tú podrías ayudarlos</div>
+    </div>
+  </div>
 
+  <div class="container col-lg-4">
+    <img src="{% static 'voluntarios/img/5.jpg' %}" alt="Avatar" class="image">
+    <div class="overlay">
+      <div class="text">Si tienes conocimientos que entregar, este será tu lugar favorito</div>
+    </div>
+  </div>
+
+  <div class="container col-lg-4">
+    <img src="{% static 'voluntarios/img/6.jpg' %}" alt="Avatar" class="image">
+    <div class="overlay">
+      <div class="text">Si todos nos ayudamos, llegaremos lejos</div>
+    </div>
+  </div>
+</div>
 {% endblock %}

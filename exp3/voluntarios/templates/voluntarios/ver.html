@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-</head>
-<body>
+{% extends 'voluntarios/base.html' %}
+{% load static %}
+{% block contenido %}
+
     <div class="row">
         <h1>Mostrando datos usuario</h1>
       </div>
@@ -33,15 +27,18 @@
                 <td>{{us.comuna}}</td>
                 <td>{{us.email}}</td>
                 <td>{{us.fono}}</td>
-                <td><a href="{ url 'form_mod_usuario' us.rutUsuario%}" class="btn btn-primary">Modificar</a></td>
+                <td><a href="{% url 'form_mod_usuario' us.rutUsuario%}" class="btn btn-primary">Modificar</a></td>
+                <td><a href="{% url 'form_del_usuario' us.rutUsuario%}" class="btn btn-danger">Eliminar</a></td>
             </tr>
         {%endfor%}
 
     </tbody>
 
-{% endblock %} 
+
 
         </table>
       </div>            
-</body>
-</html>
+
+
+
+{% endblock %} 

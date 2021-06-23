@@ -12,16 +12,16 @@ class UsuarioForm(ModelForm):
                   'password2', 'fono']
 
         labels = {
-            'rutUsuario': 'Digite RUT',
-            'nombreUsuario': 'Digite nombre de usuario',
-            'fechaNac': 'Digite fecha de nacimiento',
-            'region': 'Digite la región',
-            'comuna': 'Digite la comuna',
-            'email': 'Ingrese su email',
-            'email2': 'Vuelva a ingresar el email',
-            'password': 'Ingrese su contraseña',
-            'password2': 'Vuelva a ingresar la contraseña',
-            'fono': 'Ingese el número de teléfono'
+            'rutUsuario': 'RUT',
+            'nombreUsuario': 'Nombre de usuario', 
+            'fechaNac': 'Fecha de nacimiento',
+            'region': 'Región', 
+            'comuna': 'Comuna',
+            'email': 'Email',
+            'email2': 'Reingrese su email',
+            'password': 'Contraseña',
+            'password2': 'Reingrese su contraseña',
+            'fono': 'Número de teléfono'
         }
 
         widgets = {
